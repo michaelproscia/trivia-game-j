@@ -1,0 +1,26 @@
+* {
+    color: white;
+}
+
+body {
+    background-color: #3b4252;
+}
+
+.game-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 6.25rem;
+}
+
+.start-button {
+    position: relative;
+    height: 6.25rem;
+    width: 12.5rem;
+    top: 18rem;
+    font-family: 'Allerta', sans-serif;
+    font-size: 2.5rem;
+    border-radius: 2.5rem;
+    color: #3b4252;
+}
