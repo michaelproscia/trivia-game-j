@@ -1,27 +1,43 @@
 import "./CategoryColumn.css";
-import { useState } from "react";
 
 export default function CategoryColumn(props) {
-  function handleClick(clue) {
-    clue.isClicked = !clue.isClicked;
-    console.log(clue);
-  }
   props.data.clues.length = 5;
 
-  const clueysArr = props.data.clues.map((clue) => ({
-    ...clue,
-    isClicked: false,
-  }));
-  const cluesArr = clueysArr.map((clue, i) => {
+  const cluesArr = props.data.clues.map((clue, i) => {
+    function generateStyles() {
+      if (clue.isClicked) {
+        return { visibility: "hidden" };
+      }
+    }
+
+    function generateText() {
+      if (clue.isAnswered === false && i === 0) {
+        return 100;
+      } else if (clue.isAnswered === false && i !== 0) {
+        return i * 100 + 100;
+      } else if (clue.isAnswered === true) {
+        return "";
+      }
+    }
+
     if (!clue.isClicked) {
       return (
-        <div className="question-box" onClick={() => handleClick(clue)}>
-          {i === 0 ? 100 : i * 100 + 100}
+        <div
+          style={generateStyles()}
+          className="question-box"
+          onClick={(e) => props.handleIsClicked(e.target.dataset.key)}
+          data-key={clue.question}
+        >
+          {generateText()}
         </div>
       );
     } else {
       return (
-        <div className="question-box" onClick={() => handleClick(clue)}>
+        <div
+          className="question-box"
+          onClick={(e) => props.handleIsClicked(e.target.dataset.key)}
+          data-key={clue.question}
+        >
           {clue.question}
         </div>
       );
@@ -30,7 +46,9 @@ export default function CategoryColumn(props) {
 
   return (
     <div>
-      <div className="category-title">{props.data.title.toUpperCase()}</div>
+      <div className="category-title" onClick={props.handleIsClicked}>
+        {props.data.title.toUpperCase()}
+      </div>
       <div className="question-box">{cluesArr}</div>
     </div>
   );

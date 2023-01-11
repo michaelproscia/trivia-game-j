@@ -6,6 +6,7 @@ import { nanoid } from "nanoid";
 function App() {
   //Set state for data
   const [data, setData] = useState([]);
+  const [results, setResults] = useState([]);
   const [isGameStarted, setIsGameStarted] = useState(false);
 
   //Retrieving random category from jService
@@ -19,13 +20,51 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const newArr = data.map((datum) => ({
+      ...datum,
+      clues: datum.clues.map((clue) => ({
+        ...clue,
+        isClicked: false,
+        isAnswered: false,
+      })),
+    }));
+    setResults(newArr);
+  }, [data]);
+
   function handleGameStart() {
     setIsGameStarted(true);
   }
 
-  const columnsArr = data.map((col, i) => {
+  function handleIsClicked(input) {
+    setResults((prevResults) => {
+      const newArr = prevResults.map((datum) => ({
+        ...datum,
+        clues: datum.clues.map((clue) => {
+          if (input === clue.question) {
+            return {
+              ...clue,
+              isClicked: !clue.isClicked,
+              isAnswered: true,
+            };
+          } else {
+            return clue;
+          }
+        }),
+      }));
+      return newArr;
+    });
+  }
+
+  const columnsArr = results.map((col, i) => {
     if (i < 6) {
-      return <CategoryColumn key={nanoid()} data={col} />;
+      return (
+        <CategoryColumn
+          key={nanoid()}
+          data={col}
+          handleIsClicked={handleIsClicked}
+        />
+      );
     }
   });
 
