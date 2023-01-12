@@ -1,5 +1,22 @@
 body {
     background-color: #3b4252;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#main-title {
+    font-size: 150px;
+}
+
+#author-credit {
+    font-size: 20px;
+    margin-top: 150px;
+}
+
+#data-credits {
+    font-size: 1rem;
 }
 
 .game-board {
@@ -11,10 +28,8 @@ body {
 }
 
 .start-button {
-    position: relative;
     height: 6.25rem;
     width: 12.5rem;
-    top: 18rem;
     font-family: 'Allerta', sans-serif;
     font-size: 2.5rem;
     border-radius: 2.5rem;
@@ -28,3 +43,4 @@ body {
     background-color: #8ed081;
     text-shadow: 2px 2px #3b4252;
 }
+

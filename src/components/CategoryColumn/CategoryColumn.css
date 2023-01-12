@@ -35,13 +35,15 @@
 .category-title {
     height: 5rem;
     width: 14rem;
-    outline: 0.0625rem solid black;
+    outline: 0.1875rem solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Allerta', sans-serif;
     font-size: 30px;
     text-align: center;
+    outline-offset: -2px;
+    padding: 10px;
 }
 
 .column {
