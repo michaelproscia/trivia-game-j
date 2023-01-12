@@ -10,7 +10,7 @@ export default function CategoryColumn(props) {
       }
     }
 
-    function generateText() {
+    function generateNumText() {
       if (clue.isAnswered === false && i === 0) {
         return 100;
       } else if (clue.isAnswered === false && i !== 0) {
@@ -22,34 +22,32 @@ export default function CategoryColumn(props) {
 
     if (!clue.isClicked) {
       return (
-        <div
+        <button
           style={generateStyles()}
           className="question-box"
           onClick={(e) => props.handleIsClicked(e.target.dataset.key)}
           data-key={clue.question}
         >
-          {generateText()}
-        </div>
+          {generateNumText()}
+        </button>
       );
     } else {
       return (
-        <div
-          className="question-box"
+        <button
+          className="clicked-clue"
           onClick={(e) => props.handleIsClicked(e.target.dataset.key)}
           data-key={clue.question}
         >
           {clue.question}
-        </div>
+        </button>
       );
     }
   });
 
   return (
     <div>
-      <div className="category-title" onClick={props.handleIsClicked}>
-        {props.data.title.toUpperCase()}
-      </div>
-      <div className="question-box">{cluesArr}</div>
+      <div className="category-title">{props.data.title.toUpperCase()}</div>
+      <div className="column">{cluesArr}</div>
     </div>
   );
 }

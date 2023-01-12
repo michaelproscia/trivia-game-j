@@ -1,9 +1,35 @@
+* {
+    color: white;
+}
+
 .question-box {
     outline: 0.0625rem solid black;
     width: 14rem;
     height: 8rem;
     font-family: 'Allerta', sans-serif;
     text-align: center;
+    background-color: #3b4252;
+    color: #8ed081;
+    font-size: 1.5rem;
+}
+
+.question-box:hover {
+    border: 5px solid #8ed081;
+    transition: ease 1ms;
+    cursor: pointer;
+}
+
+.clicked-clue {
+    background-color: #3b4252;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 60px;
+    padding: 300px;
 }
 
 .category-title {
@@ -18,3 +44,9 @@
     text-align: center;
 }
 
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
