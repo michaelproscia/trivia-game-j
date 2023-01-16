@@ -8,8 +8,8 @@
     height: 8rem;
     font-family: 'Allerta', sans-serif;
     text-align: center;
-    background-color: #3b4252;
-    color: #8ed081;
+    background-color: #34657c;
+    color: white;
     font-size: 1.5rem;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .clicked-clue {
-    background-color: #3b4252;
+    background-color: #34657c;
     position: fixed;
     top: 0;
     left: 0;
@@ -43,6 +43,7 @@
     font-size: 30px;
     text-align: center;
     outline-offset: -2px;
+    background-color: #178b94;
 }
 
 .column {
