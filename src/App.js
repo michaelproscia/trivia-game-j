@@ -27,6 +27,7 @@ function App() {
         ...clue,
         isClicked: false,
         isAnswered: false,
+        isAnswerRevealed: false,
       })),
     }));
     setResults(newArr);
@@ -56,6 +57,25 @@ function App() {
     });
   }
 
+  function handleIsAnswerRevealed(input) {
+    setResults((prevResults) => {
+      const newArr = prevResults.map((datum) => ({
+        ...datum,
+        clues: datum.clues.map((clue) => {
+          if (input === clue.question) {
+            return {
+              ...clue,
+              isAnswerRevealed: !clue.isAnswerRevealed,
+            };
+          } else {
+            return clue;
+          }
+        }),
+      }));
+      return newArr;
+    });
+  }
+
   const columnsArr = results.map((col, i) => {
     if (i < 6) {
       return (
@@ -63,6 +83,7 @@ function App() {
           key={nanoid()}
           data={col}
           handleIsClicked={handleIsClicked}
+          handleIsAnswerRevealed={handleIsAnswerRevealed}
         />
       );
     }
