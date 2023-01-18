@@ -1,0 +1,60 @@
+.score-display {
+    background-color: #3b4252;
+    height: 20px;
+    text-align: center;
+    height: 30px;
+    width: 200px;
+    font-size: 1rem;
+    font-family: 'Allerta', sans-serif;
+    border-radius: 20px;
+}
+
+.name-display {
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    text-align: center;
+    height: 30px;
+    width: 200px;
+    font-family: 'Allerta', sans-serif;
+    border-radius: 20px;
+}
+
+.player-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    gap: 2px;
+}
+
+.plus, .minus {
+    font-size: 1.5rem;
+    height: 30px;
+    width: 100px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+}
+
+.plus:hover,
+.minus:hover {
+    cursor: pointer;
+}
+
+.plus {
+    background-color: green;
+}
+
+.minus {
+    background-color: red;
+}
+
+.score-controls {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    width: 200px;
+    font-size: 1.5rem;
+    gap: 6px;
+}

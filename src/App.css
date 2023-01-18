@@ -18,7 +18,7 @@ body {
 
 #author-credit {
     font-size: 20px;
-    margin-top: 150px;
+    margin-top: 5rem;
 }
 
 #data-credits {
@@ -30,6 +30,30 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+}
+
+#team-select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3.125rem;
+    margin-top: -1.875rem;
+}
+
+#team-select-header {
+    font-size: 2rem;
+}
+
+#team-select-dropdown {
+    color: black;
+    height: 36px;
+    font-family: 'Allerta', sans-serif;
+}
+
+#team-select-dropdown option {
+    color: black;
+    font-family: 'Allerta', sans-serif;
 }
 
 .start-button {
@@ -49,3 +73,9 @@ body {
     text-shadow: 2px 2px #3b4252;
 }
 
+.scoreboard-container {
+    z-index: 1010;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
