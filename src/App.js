@@ -1,7 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import CategoryColumn from "./components/CategoryColumn/CategoryColumn";
-import Scoreboard from "./components/CategoryColumn/Scoreboard/Scoreboard";
+import Scoreboard from "./components/Scoreboard/Scoreboard";
 
 function App() {
   //Set state for data
