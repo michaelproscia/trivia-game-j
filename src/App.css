@@ -13,11 +13,11 @@ body {
 }
 
 #main-title {
-    font-size: 150px;
+    font-size: 9.375rem;
 }
 
 #author-credit {
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-top: 5rem;
 }
 
@@ -47,9 +47,9 @@ body {
 
 #team-select-dropdown {
     color: black;
-    height: 36px;
+    height: 2.25rem;
     font-family: 'Allerta', sans-serif;
-    border-radius: 10px;
+    border-radius: 0.625rem;
 }
 
 #team-select-dropdown option {
@@ -63,7 +63,7 @@ body {
     font-family: 'Allerta', sans-serif;
     font-size: 2.5rem;
     border-radius: 2.5rem;
-    border: 5px solid black;
+    border: 0.3125rem solid black;
     color: #3b4252;
 }
 
@@ -71,7 +71,7 @@ body {
     cursor: pointer;
     color: white;
     background-color: #8ed081;
-    text-shadow: 2px 2px #3b4252;
+    text-shadow: 0.125rem 0.125rem #3b4252;
 }
 
 .scoreboard-container {

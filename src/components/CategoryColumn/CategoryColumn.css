@@ -14,14 +14,14 @@
 }
 
 .question-box:hover {
-    border: 5px solid #8ed081;
+    border: 0.3125rem solid #8ed081;
     transition: ease 1ms;
     cursor: pointer;
 }
 
 .clicked-clue {
     background-color: #34657c;
-    font-size: 60px;
+    font-size: 3.75rem;
     color: white;
     padding-bottom: 6rem;
 }
@@ -34,11 +34,11 @@
     justify-content: center;
     align-items: center;
     font-family: 'Allerta', sans-serif;
-    font-size: 30px;
+    font-size: 1.875rem;
     text-align: center;
-    outline-offset: -2px;
+    outline-offset: -0.125rem;
     background-color: #178b94;
-    padding: 10px 16px;
+    padding: 0.625rem 1rem;
     word-wrap: break-word;
     white-space: pre-wrap;
     word-break: break-word;
@@ -54,14 +54,14 @@
 .answer-button {
     z-index: 1000;
     background-color: #178b94;
-    height: 50px;
-    width: 200px;
+    height: 3.125rem;
+    width: 12.5rem;
     color: black;
     font-size: 1.5rem;
-    border-radius: 45px;
+    border-radius: 2.8125rem;
     cursor: pointer;
     font-family: "Allerta", sans-serif;
-    border: solid 4px black;
+    border: solid 0.25rem black;
     position: fixed;
     top: 1rem;
     right: 1rem;
@@ -104,14 +104,14 @@
 .go-back-button {
     z-index: 1001;
     background-color: #178b94;
-    height: 50px;
-    width: 200px;
+    height: 3.125rem;
+    width: 12.5rem;
     color: black;
     font-size: 1.5rem;
-    border-radius: 45px;
+    border-radius: 2.8125rem;
     cursor: pointer;
     font-family: "Allerta", sans-serif;
-    border: solid 4px black;
+    border: solid 0.25rem black;
     position: fixed;
     top: 1rem;
     left: 1rem;
