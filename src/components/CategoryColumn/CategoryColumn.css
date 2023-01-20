@@ -120,3 +120,34 @@
 .go-back-button:hover{
     background-color: #8ed081;
 }
+
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .category-title {
+        width: 4.5rem;
+        font-size: 1rem;
+    }
+    .question-box {
+        width: 6.5rem;
+        height: 4rem;
+        font-size: 1rem;
+    }
+
+    .clicked-clue {
+        font-size: 2rem;
+    }
+
+    .answer {
+        font-size: 2rem;
+    }
+
+    .answer-button {
+        height: 3rem;
+        width: 10rem;
+    }
+
+    .go-back-button {
+        height: 3rem;
+        width: 10rem;
+    }
+}
