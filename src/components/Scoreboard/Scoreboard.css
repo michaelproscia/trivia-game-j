@@ -35,6 +35,7 @@
     width: 100px;
     padding-bottom: 10px;
     border-radius: 20px;
+    border: 1px solid black;
 }
 
 .plus:hover,
@@ -43,11 +44,11 @@
 }
 
 .plus {
-    background-color: green;
+    background-color: #005780;
 }
 
 .minus {
-    background-color: red;
+    background-color: #fd7e43;
 }
 
 .score-controls {

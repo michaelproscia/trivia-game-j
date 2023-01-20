@@ -17,12 +17,16 @@ export default function Scoreboard(props) {
     setPlayerScore((prevScore) => Number(prevScore) - 100);
   }
 
-  function changePlayerScore(input) {
-    setPlayerScore((prevScore) => {
-      const num = isNaN(Number(input)) || !input ? prevScore : input;
-      return num;
-    });
-  }
+  // function changePlayerScore(input) {
+  //   setPlayerScore((prevScore) => {
+  //     const isValid = /^-?\d*\.?\d*$/.test(input);
+  //     if (isValid) {
+  //       return input;
+  //     } else {
+  //       return prevScore;
+  //     }
+  //   });
+  // }
 
   return (
     <div>
@@ -37,7 +41,7 @@ export default function Scoreboard(props) {
           type="text"
           className="score-display"
           value={playerScore}
-          onChange={(e) => changePlayerScore(e.target.value)}
+          readOnly
         />
         <div className="score-controls">
           <div className="minus" onClick={decreasePlayerScore}>

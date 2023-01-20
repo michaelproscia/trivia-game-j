@@ -4,23 +4,18 @@ import CategoryColumn from "./components/CategoryColumn/CategoryColumn";
 import Scoreboard from "./components/Scoreboard/Scoreboard";
 
 function App() {
-  //Set state for data
   const [data, setData] = useState([]);
   const [results, setResults] = useState([]);
   const [isGameStarted, setIsGameStarted] = useState(false);
   const [playerCount, setPlayerCount] = useState(0);
 
-  //Retrieving random category from jService
   useEffect(() => {
     for (let i = 0; i < 10; i++) {
       fetch(
         `https:jservice.io/api/category?id=${Math.floor(Math.random() * 1500)}`
       )
         .then((res) => res.json())
-        .then((data) => {
-          setData((prevData) => [...prevData, data]);
-          return;
-        });
+        .then((data) => setData((prevData) => [...prevData, data]));
     }
   }, []);
 
@@ -34,7 +29,10 @@ function App() {
         isAnswerRevealed: false,
       })),
     }));
-    setResults(newArr);
+    const arr = newArr.filter((result) => result.clues.length >= 5);
+    arr.length = 6;
+    arr.forEach((obj) => (obj.clues.length = 5));
+    setResults(arr);
   }, [data]);
 
   function handleGameStart() {
@@ -81,18 +79,15 @@ function App() {
     });
   }
 
-  const filteredResults = results.filter((result) => result.clues.length >= 5);
-  const columnsArr = filteredResults.map((result, i) => {
-    if (i < 6) {
-      return (
-        <CategoryColumn
-          key={result.title}
-          data={result}
-          handleIsClicked={handleIsClicked}
-          handleIsAnswerRevealed={handleIsAnswerRevealed}
-        />
-      );
-    }
+  const columnsArr = results.map((result) => {
+    return (
+      <CategoryColumn
+        key={result.title}
+        data={result}
+        handleIsClicked={handleIsClicked}
+        handleIsAnswerRevealed={handleIsAnswerRevealed}
+      />
+    );
   });
 
   function updatePlayerCount(input) {
